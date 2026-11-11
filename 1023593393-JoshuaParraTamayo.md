@@ -70,4 +70,30 @@
 
     * Puedes usar **Git sin GitHub** perfectamente (puedes guardar todo tu código de manera local en tu disco duro).
     * No puedes usar **GitHub sin Git** (GitHub está construido específicamente para almacenar, interpretar y gestionar proyectos que utilizan Git como sistema de control de versiones).
-    
+
+3. **¿Qué es una nube de repositorios?** Expliquen este concepto y mencionen al menos tres alternativas diferentes en el mercado (por ejemplo, además de GitHub, ¿qué otras plataformas existen?).
+
+    Una **nube de repositorios** (también conocida como servicio de alojamiento de código o *Git hosting*) es una plataforma basada en la nube que actúa como un servidor centralizado en internet para almacenar, gestionar y colaborar en proyectos que utilizan Git.
+
+    Mientras que Git vive en tu computadora local, la nube de repositorios permite subir (*push*) tu código para que esté respaldado de forma segura fuera de tu disco duro y accesible para otros desarrolladores desde cualquier parte del mundo. Además de guardar el código, estas plataformas integran herramientas esenciales para el flujo de trabajo moderno, como gestión de tareas (issues), control de acceso por roles, revisión de código, automatización de pruebas (CI/CD) y despliegues automáticos.
+
+    ---
+
+    ### Principales alternativas en el mercado
+
+    Aunque GitHub es la más popular de la industria, existen varias opciones muy potentes que se utilizan ampliamente según las necesidades de los equipos o las empresas:
+
+    #### 1. GitLab
+
+    * **Qué es:** Una plataforma completa de DevOps que ofrece todo en uno (desde la gestión del código fuente hasta la integración continua, entrega continua, seguridad y monitoreo).
+    * **Características destacadas:** Es famosa por su potente sistema integrado de **CI/CD** (Integración Continua y Despliegue Continuo) y por ofrecer una versión *Self-Hosted* (puedes instalarla en tus propios servidores locales o privados de forma gratuita con su edición Community).
+
+    #### 2. Bitbucket
+
+    * **Qué es:** La plataforma de alojamiento de Git desarrollada por **Atlassian**, la empresa creadora de herramientas de gestión de proyectos como **Jira** y Confluence.
+    * **Características destacadas:** Su mayor fortaleza es la **integración nativa con Jira y Trello**. Si un equipo ya utiliza las herramientas de Atlassian para la gestión ágil de proyectos (Scrum/Kanban), Bitbucket conecta automáticamente los commits, ramas y solicitudes de extracción con las tareas correspondientes.
+
+    #### 3. Azure DevOps (anteriormente Visual Studio Team Services)
+
+    * **Qué es:** La plataforma integral de Microsoft orientada tanto al desarrollo en la nube (con soporte para repositorios Git y Team Foundation Version Control) como a la gestión de ciclos de vida de software corporativo.
+    * **Características destacadas:** Está profundamente integrada con el ecosistema de **Microsoft Azure** y herramientas empresariales. Ofrece tableros Kanban muy robustos, gestión de pipelines de despliegue avanzados y un fuerte enfoque en la seguridad y cumplimiento para grandes corporaciones.
