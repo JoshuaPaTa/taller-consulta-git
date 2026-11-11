@@ -28,3 +28,46 @@
 
     * **El problema tradicional:** Si el disco duro de la computadora principal o del servidor fallaba, todo el historial del proyecto podía perderse para siempre.
     * **Cómo lo resuelve Git:** Al ser un sistema **distribuido**, cada desarrollador que clona el repositorio tiene una **copia completa** de toda la historia del proyecto en su máquina local. Esto significa que cada copia actúa como un respaldo integral y redundante.
+
+2. **Diferencias clave entre Git y GitHub.** (Expliquen por qué no son lo mismo).
+
+    Aunque a menudo se usan juntos y muchas personas tienden a confundirlos, **Git y GitHub no son lo mismo**. La confusión es normal porque GitHub lleva la palabra "Git" en su nombre, pero cumplen roles completamente diferentes en el ecosistema de desarrollo.
+
+    Diferencias clave y por qué son herramientas distintas:
+
+    ---
+
+    ### Tabla comparativa rápida
+
+    | Característica | Git | GitHub |
+    | --- | --- | --- |
+    | **¿Qué es?** | Un **software** (una herramienta de línea de comandos). | Una **plataforma web** (un servicio en la nube). |
+    | **¿Dónde vive?** | En tu computadora local (es local). | En servidores remotos en internet (en la nube). |
+    | **Conexión a internet** | Funciona **sin conexión** a internet. | Requiere **conexión a internet** para usarse. |
+    | **Propósito principal** | Rastrear el historial de cambios y gestionar versiones del código. | Alojamiento remoto de repositorios, trabajo en equipo y redes sociales para desarrolladores. |
+    | **Creador** | Linus Torvalds (2005). | Microsoft (fundado originalmente por Tom Preston-Werner, Chris Wanstrath y PJ Hyett en 2008; adquirido por Microsoft en 2018). |
+
+    ---
+
+    ### ¿Por qué no son lo mismo? (Explicación detallada)
+
+    #### 1. La naturaleza de cada herramienta (Software vs. Servicio)
+
+    * **Git es la tecnología (el motor):** Es un software libre que instalas en tu sistema operativo. Se ejecuta en tu máquina local para registrar cada línea de código que escribes, permitirte crear ramas, hacer fusiones y viajar en el tiempo a través de tu historial de commits, todo sin necesidad de tocar internet.
+    * **GitHub es el espacio de almacenamiento y colaboración (el garaje compartido):** Es una plataforma basada en la nube que toma los repositorios que creas con Git en tu computadora y te permite subirlos (hacer *push*) para guardarlos de forma segura en internet.
+
+    #### 2. Colaboración local vs. Colaboración en la nube
+
+    * **Git** por sí solo es capaz de manejar versiones en tu computadora, e incluso puedes colaborar con otros en una red local. Sin embargo, no provee una interfaz gráfica avanzada para revisar código de terceros ni gestiona perfiles de usuarios globales.
+    * **GitHub** amplía las capacidades de Git agregando herramientas de colaboración social y empresarial:
+    * **Pull Requests (Solicitudes de extracción):** Permiten proponer cambios y discutirlos línea por línea antes de integrarlos al código principal.
+    * **Gestión de proyectos (Issues y Projects):** Tableros estilo Kanban para rastrear tareas, errores y características.
+    * **Revisiones de código (Code Review):** Facilitan que otros desarrolladores aprueben o rechacen cambios en equipo.
+
+
+
+    #### 3. Dependencia técnica
+
+    * Puedes usar **Git sin GitHub** perfectamente (puedes guardar todo tu código de manera local en tu disco duro).
+    * No puedes usar **GitHub sin Git** (GitHub está construido específicamente para almacenar, interpretar y gestionar proyectos que utilizan Git como sistema de control de versiones).
+    
