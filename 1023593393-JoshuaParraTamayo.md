@@ -97,3 +97,75 @@
 
     * **Qué es:** La plataforma integral de Microsoft orientada tanto al desarrollo en la nube (con soporte para repositorios Git y Team Foundation Version Control) como a la gestión de ciclos de vida de software corporativo.
     * **Características destacadas:** Está profundamente integrada con el ecosistema de **Microsoft Azure** y herramientas empresariales. Ofrece tableros Kanban muy robustos, gestión de pipelines de despliegue avanzados y un fuerte enfoque en la seguridad y cumplimiento para grandes corporaciones.
+
+4. **Glosario básico:** Definan con sus propias palabras, de forma clara y **agregando un ejemplo práctico para cada uno**, los siguientes conceptos fundamentales de Git:
+   * *Commit*
+   * *Branch* (Rama)
+   * *Merge* (Fusión)
+   * *Pull* y *Push*
+   * *Pull Request (PR)*
+   * *Clone* (Clonar)
+   * *Upstream* (y su diferencia con *Origin*)
+---
+
+### 1. Commit
+
+* **Definición:** Es el equivalente a hacer una "fotografía" o un punto de control guardado en el historial del proyecto. Cada commit registra qué archivos cambiaron, quién los modificó, cuándo y un mensaje corto que describe el propósito de la actualización.
+* **Ejemplo práctico:** Estás programando una página web, terminas de diseñar el formulario de contacto y ejecutas el comando:
+`git commit -m "feat: add contact form validation"`
+Esto guarda ese estado específico del código de forma permanente en el historial de Git.
+
+---
+
+### 2. Branch (Rama)
+
+* **Definición:** Es una línea de desarrollo independiente. Permite trabajar en una nueva característica, experimentar o corregir un error en paralelo sin alterar el código estable principal (por lo general llamado `main` o `master`).
+* **Ejemplo práctico:** Tu aplicación de software está funcionando perfectamente en la rama `main`. Creas una nueva rama llamada `feature/shopping-cart` para programar el carrito de compras de forma aislada, sabiendo que si te equivocas o rompes algo, la versión principal de la app sigue intacta.
+
+---
+
+### 3. Merge (Fusión)
+
+* **Definición:** Es el proceso mediante el cual Git toma los cambios realizados en una rama (por ejemplo, una rama de características) y los integra formalmente dentro de otra (como la rama principal).
+* **Ejemplo práctico:** Ya terminaste y probaste con éxito el carrito de compras en tu rama `feature/shopping-cart`. Te pasas a la rama `main` y ejecutas la fusión (`merge`) para combinar el código nuevo con el software oficial que usan los usuarios.
+
+---
+
+### 4. Pull y Push
+
+* **Definición:** Son los comandos clave para sincronizar tu computadora local con un servidor remoto en la nube (como GitHub):
+* **Push (Empujar):** Sube los commits que has hecho en tu computadora local hacia el repositorio remoto.
+* **Pull (Jalar):** Descarga los cambios más recientes que están en el servidor remoto hacia tu computadora local.
+
+
+* **Ejemplo práctico:**
+* *Push:* Terminaste de corregir un error en tu laptop y escribes `git push origin main` para enviar el código a GitHub y que tu equipo lo tenga disponible.
+* *Pull:* Tu compañero de equipo subió cambios al repositorio en la mañana; al llegar a trabajar, escribes `git pull` para descargar esos cambios a tu computadora antes de empezar a programar.
+
+
+---
+
+### 5. Pull Request (PR)
+
+* **Definición:** Una solicitud formal dentro de una plataforma web (como GitHub o GitLab) donde avisas a tu equipo que has terminado una tarea en una rama y pides que revisen, discutan y aprueben tu código antes de fusionarlo con el proyecto principal.
+* **Ejemplo práctico:** Creaste una rama para solucionar un fallo de seguridad, la subiste a GitHub y abres un Pull Request titulado *"Fix: Patch database injection vulnerability"*. Tus compañeros revisan línea por línea tu código en la web, te dejan comentarios y, al dar el visto bueno, aprueban el PR para que se una al sistema.
+
+---
+
+### 6. Clone (Clonar)
+
+* **Definición:** La acción de descargar por primera vez una copia completa de un repositorio remoto existente (incluyendo todo su historial de commits) desde la nube hacia tu disco duro local.
+* **Ejemplo práctico:** Te acaban de contratar en una empresa y te dan el enlace de un proyecto. Abres tu terminal y escribes `git clone [https://github.com/empresa/proyecto-backend.git](https://github.com/empresa/proyecto-backend.git)` para descargar todo el código base y empezar a trabajar de inmediato.
+
+---
+
+### 7. Upstream vs. Origin
+
+* **Definición:** Son nombres de alias que se le asignan a los repositorios remotos:
+* **Origin:** Es el alias predeterminado que Git le asigna al repositorio remoto **desde el cual clonaste** el proyecto (generalmente tu propia bifurcación o el repositorio oficial donde tienes permisos directos).
+* **Upstream:** Es el alias que convencionalmente se utiliza para referirse al **repositorio original y central** (el de los creadores del proyecto) cuando has hecho una copia personal (*fork*) y necesitas recibir sus actualizaciones oficiales.
+
+
+* **Ejemplo práctico:**
+* Creas una copia (*fork*) del código de un proyecto de código abierto de la biblioteca de React en tu propia cuenta de GitHub. Tu repositorio en tu cuenta es tu **`origin`** (donde guardas tus cambios).
+* El repositorio oficial principal de React es tu **`upstream`** (desde donde descargas las últimas actualizaciones oficiales de los mantenedores principales para mantener tu copia al día).
