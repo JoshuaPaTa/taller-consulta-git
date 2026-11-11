@@ -199,3 +199,50 @@
     1. **Desarrollo paralelo y simultáneo:** Varios programadores pueden trabajar al mismo tiempo en el mismo repositorio sin pisarse el código. Mientras un desarrollador crea el carrito de compras en la rama `feature/cart`, otro diseña la pasarela de pagos en `feature/payment` y un tercero corrige un error en `hotfix/login`.
     2. **Revisiones de código estructuradas (*Code Review*):** Al trabajar en ramas separadas, el código no llega al sistema principal por accidente. Cada rama debe pasar por un proceso de revisión (a través de un *Pull Request*) donde el equipo analiza las líneas modificadas, debate mejoras y detecta errores antes de integrarlo.
     3. **Flujos de trabajo profesionales:** Permiten implementar metodologías estandarizadas de la industria (como *GitFlow* o *GitHub Flow*), donde existen ramas específicas para desarrollo (`dev`), pruebas (`staging`) y producción (`main`), asegurando que solo el código 100% probado llegue a los usuarios finales.
+
+6. **¿Qué es GitFlow?** Expliquen brevemente la estructura de sus ramas principales (`master`, `develop`, `feature`, `release`, `hotfix`).
+
+    **GitFlow** es un modelo de flujo de trabajo para Git propuesto por Vincent Driessen en 2010. Está diseñado específicamente para proyectos que tienen un ciclo de lanzamiento programado (releases) y para gestionar de forma estricta el código en entornos de producción y desarrollo simultáneos.
+
+    A diferencia de modelos más simples (como *GitHub Flow*), GitFlow utiliza un conjunto rígido y predefinido de ramas organizadas según su propósito en el ciclo de vida del software.
+
+    ---
+
+    ### Las 5 ramas principales de GitFlow y su estructura
+
+    #### 1. `master` (o `main`)
+
+    * **Qué es:** Es la rama principal que representa el **estado de producción** del software.
+    * **Características:** Todo el código que se encuentra aquí es completamente estable, ha pasado por todas las pruebas y está desplegado (o listo para desplegarse) para los usuarios finales. Nadie escribe código directamente en `master`; solo recibe fusiones provenientes de ramas de *release* y *hotfix*. Cada commit en esta rama suele representar una versión oficial del software (ej. `v1.0.0`).
+
+    #### 2. `develop`
+
+    * **Qué es:** Es la rama central de **integración para el desarrollo**.
+    * **Características:** Nace a partir de `master` al inicio del proyecto. Es el lugar donde se acumulan todas las nuevas funcionalidades (*features*) que ya se terminaron y se están preparando para el próximo lanzamiento. Sirve como la base de trabajo integrada para todo el equipo de desarrollo.
+
+    #### 3. `feature` (Ramas de características)
+
+    * **Qué es:** Son ramas temporales creadas para desarrollar **nuevas funcionalidades o mejoras específicas**.
+    * **Estructura de flujo:**
+    * **Origen:** Nacen siempre a partir de la rama `develop`.
+    * **Destino:** Al finalizar la característica y ser probada, se fusionan **siempre de vuelta en `develop**` (nunca en `master`).
+    * **Nomenclatura típica:** `feature/login-oauth`, `feature/shopping-cart`. Una vez fusionadas, se eliminan.
+
+
+
+    #### 4. `release` (Ramas de lanzamiento)
+
+    * **Qué es:** Son ramas temporales que sirven para **preparar un nuevo lanzamiento a producción**.
+    * **Estructura de flujo:**
+    * **Origen:** Nacen a partir de `develop` cuando el equipo considera que hay suficiente código listo para una nueva versión.
+    * **Propósito:** Permiten hacer pruebas finales exhaustivas de control de calidad (QA), corregir errores menores de última hora, actualizar números de versión y redactar documentación de lanzamiento sin congelar el desarrollo de nuevas características (que siguen avanzando en `develop`).
+    * **Destino:** Al estabilizar la versión, se fusionan **tanto en `master` como en `develop**`, y luego se eliminan.
+
+
+
+    #### 5. `hotfix` (Ramas de corrección urgente)
+
+    * **Qué es:** Son ramas de emergencia creadas para **solucionar un error crítico detectado en producción** que no puede esperar al próximo ciclo normal de lanzamiento.
+    * **Estructura de flujo:**
+    * **Origen:** Nacen directamente de la rama `master` (porque deben aislar el error actual de producción).
+    * **Destino:** Una vez aplicado el parche de emergencia, la rama se fusiona **simultáneamente en `master` y en `develop**` para asegurar que el error quede resuelto tanto en producción como en la versión en desarrollo actual. Luego se eliminan.
